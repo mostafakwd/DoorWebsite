@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostafa | باب النجار مخلوع</title>
+    
+    <!-- Google Fonts: IBM Plex Sans Arabic (Modern/Tech) & JetBrains Mono (Code) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['IBM Plex Sans Arabic', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    },
+                    colors: {
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#121212',
+                            700: '#1e1e1e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Modern Gradient Mesh Background */
+        body {
+            background-color: #050505;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(56, 189, 248, 0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(168, 85, 247, 0.1) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .glass-button {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-button:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Scanline effect overlay (optional retro vibe) */
+        .scanlines {
+            background: linear-gradient(
+                to bottom,
+                rgba(255,255,255,0),
+                rgba(255,255,255,0) 50%,
+                rgba(0,0,0,0.1) 50%,
+                rgba(0,0,0,0.1)
+            );
+            background-size: 100% 4px;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body class="text-gray-200 font-sans min-h-screen flex flex-col items-center justify-center p-4 selection:bg-purple-500 selection:text-white">
+
+    <!-- Scanline Overlay -->
+    <div class="scanlines"></div>
+
+    <!-- Main Container -->
+    <main class="w-full max-w-xl relative z-10 animate-float">
+        
+        <!-- Status Indicator (Top of card) -->
+        <div class="flex justify-center mb-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-xs font-mono tracking-wider">
+                <span class="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse"></span>
+                WORK IN PROGRESS
+            </div>
+        </div>
+
+        <!-- Glass Card -->
+        <div class="glass-card rounded-3xl p-8 md:p-12 text-center relative overflow-hidden group">
+            
+            <!-- Glow effect behind text -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-purple-500/20 rounded-full blur-[60px] pointer-events-none group-hover:bg-blue-500/20 transition-colors duration-700"></div>
+
+            <!-- Avatar / Logo Area -->
+            <div class="mb-8 relative inline-block">
+                <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-gray-800 to-gray-700 p-[2px] mx-auto ring-4 ring-black/50 shadow-2xl">
+                    <div class="w-full h-full rounded-full bg-[#0a0a0a] flex items-center justify-center overflow-hidden relative">
+                        <!-- Placeholder Initials or Icon -->
+                        <span class="text-3xl font-bold text-gray-500 group-hover:text-white transition-colors duration-300">M</span>
+                        <!-- Broken Wrench Icon Overlay -->
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/60">
+                             <i class="ph-fill ph-wrench text-2xl text-yellow-500"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arabic Title (Hero) -->
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400 leading-tight pb-2">
+                باب النجار مخلوع
+            </h1>
+
+            <!-- English Monospace Subtitle -->
+            <div class="font-mono text-sm md:text-base text-gray-400 mb-8 space-y-1 text-left inline-block bg-black/20 p-4 rounded-xl border border-white/5" dir="ltr">
+                <p><span class="text-purple-400">if</span> (<span class="text-blue-400">role</span> === <span class="text-green-400">'Carpenter'</span>) {</p>
+                <p class="pl-6"><span class="text-blue-400">door</span>.<span class="text-yellow-400">status</span> = <span class="text-green-400">'Broken'</span>;</p>
+                <p>}</p>
+            </div>
+
+            <!-- Social Links (Minimal) -->
+            <div class="flex items-center justify-center gap-4" dir="ltr">
+                <a href="mailto:mostafakwd@gmail.com" class="glass-button w-12 h-12 rounded-xl flex items-center justify-center text-gray-400 hover:text-white group-hover:border-purple-500/30">
+                    <i class="ph-fill ph-envelope text-xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/mostafakwd" target="_blank" class="glass-button w-12 h-12 rounded-xl flex items-center justify-center text-gray-400 hover:text-white group-hover:border-blue-500/30">
+                    <i class="ph-fill ph-linkedin-logo text-xl"></i>
+                </a>
+                <a href="https://www.instagram.com/mostafakwd" target="_blank" class="glass-button w-12 h-12 rounded-xl flex items-center justify-center text-gray-400 hover:text-white group-hover:border-pink-500/30">
+                    <i class="ph-fill ph-instagram-logo text-xl"></i>
+                </a>
+                <a href="https://www.behance.net/mostafakwd" target="_blank" class="glass-button w-12 h-12 rounded-xl flex items-center justify-center text-gray-400 hover:text-white group-hover:border-blue-400/30">
+                    <i class="ph-fill ph-behance-logo text-xl"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-8 text-center" dir="ltr">
+            <p class="text-xs text-gray-600 font-mono">
+                &copy; <span id="year"></span> Mostafa. All rights reserved.
+            </p>
+        </div>
+
+    </main>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
